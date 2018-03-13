@@ -1,0 +1,7 @@
+/bundle/**
+/colors/**
+/.tmp/**
+/.backup/**
+/.undo/**
+after/
+.DS_Store
