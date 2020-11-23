@@ -35,7 +35,8 @@
     "yaml",
     "json",
     "python",
-    "java"
+    "java",
+    "dart"
   ],
   "coc.preferences.hoverTarget": "float",
 
@@ -85,11 +86,5 @@
   // TODO b:coc_suggest_disable=1 GOYO
   // TODO add to paths.vim g:coc_node_path
 
-  //"languageserver": {
-  //  "golang": {
-  //    "command": "gopls",
-  //    "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-  //    "filetypes": ["go"]
-  //  }
-  //}
+  // Flutter
 }
