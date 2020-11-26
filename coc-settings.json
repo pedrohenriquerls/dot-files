@@ -36,7 +36,10 @@
     "json",
     "python",
     "java",
-    "dart"
+    "dart",
+    "go",
+    "rb",
+    "html.erb"
   ],
   "coc.preferences.hoverTarget": "float",
 
