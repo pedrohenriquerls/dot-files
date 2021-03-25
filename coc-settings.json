@@ -39,6 +39,7 @@
     "dart",
     "go",
     "rb",
+    "clj",
     "html.erb"
   ],
   "coc.preferences.hoverTarget": "float",
