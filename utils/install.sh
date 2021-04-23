@@ -5,7 +5,7 @@ set -o errexit    # exit when command fails
 
 installnodemac() { \
   brew install lua
-  brew install node
+  brew install nvm
   brew install yarn
 }
 
@@ -67,12 +67,12 @@ installcocextensions() { \
 
 cloneconfig() { \
   echo "Cloning Nvim Mach 2 configuration"
-  git clone https://github.com/ChristianChiarulli/nvim.git ~/.config/nvim
+#  git clone https://github.com/ChristianChiarulli/nvim.git ~/.config/nvim
 }
 
 moveoldnvim() { \
   echo "Moving your config to nvim.old"
-  mv $HOME/.config/nvim $HOME/.config/nvim.old
+#  mv $HOME/.config/nvim $HOME/.config/nvim.old
 }
 
 moveoldcoc() { \
@@ -148,13 +148,13 @@ which node > /dev/null && echo "node installed, moving on..." || asktoinstallnod
 pip3 list | grep pynvim > /dev/null && echo "pynvim installed, moving on..." || installpynvim
 
 # move old nvim directory if it exists
-[ -d "$HOME/.config/nvim" ] && moveoldnvim
+# [ -d "$HOME/.config/nvim" ] && moveoldnvim
 
 # move old nvim directory if it exists
-[ -d "$HOME/.config/coc" ] && moveoldcoc
+# [ -d "$HOME/.config/coc" ] && moveoldcoc
 
 # clone config down
-cloneconfig
+# cloneconfig
 
 # echo "Nvim Mach 2 is better with at least ripgrep, ueberzug and ranger"
 # echo -n "Would you like to install these now?  (y/n)? "
@@ -166,6 +166,12 @@ which nvim > /dev/null && installplugins
 
 installcocextensions
 
-echo "I recommend you also install and activate a font from here: https://github.com/ryanoasis/nerd-fonts"
+echo "Installing the nerd fonts: https://github.com/ryanoasis/nerd-fonts"
+brew tap homebrew/cask-fonts
+brew install --cask font-hack-nerd-font
 
-echo "I also recommend you add 'set preview_images_method ueberzug' to ~/.config/ranger/rc.conf"
+brew install tmux
+ln -nfs ./.tmux.conf ~/.tmux.conf
+
+brew install --cask alacritty
+ln -nfs ./.alacritty.yml ~/.alacritty.yml
