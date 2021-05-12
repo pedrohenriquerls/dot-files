@@ -19,8 +19,7 @@
   // codelens
   "codeLens.enable": true,
   "java.referencesCodeLens.enabled": true,
-  "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar",
-
+  "java.jdt.ls.vmargs": "-javaagent:/usr/local/share/lombok/lombok.jar", 
   // list
   "list.indicator": ">",
   "list.selectedSignText": " ",
@@ -85,10 +84,11 @@
   "bookmark.sign": "",
 
   //coc-emoji
-  "coc.source.emoji.filetypes": ["markdown"]
+  "coc.source.emoji.filetypes": ["markdown"],
 
   // TODO b:coc_suggest_disable=1 GOYO
   // TODO add to paths.vim g:coc_node_path
 
   // Flutter
+  "solargraph.formatting": true
 }
