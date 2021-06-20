@@ -45,14 +45,11 @@ let g:which_key_map['='] = [ '<C-W>='                                          ,
 let g:which_key_map['e'] = [ ':CocCommand explorer --toggle --sources=file+'   , 'explorer' ]
 let g:which_key_map['h'] = [ '<C-W>s'                                          , 'split below']
 let g:which_key_map['n'] = [ ':let @/ = ""'                                    , 'no highlight' ]
-let g:which_key_map['o'] = [ ':RnvimrToggle'                                   , 'open' ]
 let g:which_key_map['p'] = [ ':Files'                                          , 'search files' ]
 let g:which_key_map['q'] = [ '<Plug>(coc-fix-current)'                         , 'quickfix' ]
-let g:which_key_map['T'] = [ ':TSHighlightCapturesUnderCursor'                 , 'treesitter highlight' ]
 let g:which_key_map['u'] = [ ':UndotreeToggle'                                 , 'undo tree']
 let g:which_key_map['v'] = [ '<C-W>v'                                          , 'split right']
 let g:which_key_map['W'] = [ ':call WindowSwap#EasyWindowSwap()'               , 'move window' ]
-let g:which_key_map['z'] = [ 'Goyo'                                            , 'zen' ]
 
 " Group mappings
 
@@ -62,16 +59,10 @@ let g:which_key_map.a = {
       \ 'c' : [':ColorizerToggle'        , 'colorizer'],
       \ 'e' : [':CocCommand explorer'    , 'explorer'],
       \ 'h' : [':let @/ = ""'            , 'remove search highlight'],
-      \ 'l' : [':Bracey'                 , 'start live server'],
-      \ 'L' : [':BraceyStop'             , 'stop live server'],
-      \ 'm' : [':MarkdownPreview'        , 'markdown preview'],
-      \ 'M' : [':MarkdownPreviewStop'    , 'markdown preview stop'],
       \ 'n' : [':set nonumber!'          , 'line-numbers'],
       \ 's' : [':s/\%V\(.*\)\%V/"\1"/'   , 'surround'],
       \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
       \ 't' : [':FloatermToggle'         , 'terminal'],
-      \ 'v' : [':Codi'                   , 'virtual repl on'],
-      \ 'V' : [':Codi!'                  , 'virtual repl off'],
       \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
       \ }
 
@@ -99,23 +90,6 @@ let g:which_key_map.b = {
       \ 'n' : ['bnext'                  , 'next-buffer'],
       \ 'p' : ['bprevious'              , 'previous-buffer'],
       \ '?' : ['Buffers'                , 'fzf-buffer'],
-      \ }
-
-" d is for debug
-let g:which_key_map.d = {
-      \ 'name' : '+debug' ,
-      \ 'b' : ['<Plug>VimspectorToggleBreakpoint'              , 'breakpoint'],
-      \ 'B' : ['<Plug>VimspectorToggleConditionalBreakpoint'   , 'conditional breakpoint'],
-      \ 'c' : ['<Plug>VimspectorRunToCursor'                   , 'run to cursor'],
-      \ 'd' : ['<Plug>VimspectorContinue'                      , 'continue'],
-      \ 'f' : ['<Plug>VimspectorAddFunctionBreakpoint'         , 'function breakpoint'],
-      \ 'm' : [':MaximizerToggle'                              , 'maximize window'],
-      \ 'o' : ['<Plug>VimspectorStepOver'                      , 'step over'],
-      \ 'O' : ['<Plug>VimspectorStepOut'                       , 'step out'],
-      \ 'i' : ['<Plug>VimspectorStepInto'                      , 'step into'],
-      \ 'p' : ['<Plug>VimspectorPause'                         , 'pause'],
-      \ 'r' : ['<Plug>VimspectorRestart'                       , 'restart'],
-      \ 's' : ['<Plug>VimspectorStop'                          , 'stop'],
       \ }
 
 " f is for find and replace
@@ -155,36 +129,6 @@ let g:which_key_map.m = {
       " CoC throws an error
       " \ 'a' : [':CocCommand bookmark.annotate', 'annotate bookmark'],
 
-" " s is for search
-" let g:which_key_map.s = {
-"       \ 'name' : '+search' ,
-"       \ '/' : [':History/'              , 'history'],
-"       \ ';' : [':Commands'              , 'commands'],
-"       \ 'a' : [':Ag'                    , 'text Ag'],
-"       \ 'b' : [':BLines'                , 'current buffer'],
-"       \ 'B' : [':Buffers'               , 'open buffers'],
-"       \ 'c' : [':Commits'               , 'commits'],
-"       \ 'C' : [':BCommits'              , 'buffer commits'],
-"       \ 'f' : [':Files'                 , 'files'],
-"       \ 'g' : [':GFiles'                , 'git files'],
-"       \ 'G' : [':GFiles?'               , 'modified git files'],
-"       \ 'h' : [':History'               , 'file history'],
-"       \ 'H' : [':History:'              , 'command history'],
-"       \ 'l' : [':Lines'                 , 'lines'] ,
-"       \ 'm' : [':Marks'                 , 'marks'] ,
-"       \ 'M' : [':Maps'                  , 'normal maps'] ,
-"       \ 'p' : [':Helptags'              , 'help tags'] ,
-"       \ 'P' : [':Tags'                  , 'project tags'],
-"       \ 's' : [':CocList snippets'      , 'snippets'],
-"       \ 'S' : [':Colors'                , 'color schemes'],
-"       \ 't' : [':Rg'                    , 'text Rg'],
-"       \ 'T' : [':BTags'                 , 'buffer tags'],
-"       \ 'w' : [':Windows'               , 'search windows'],
-"       \ 'y' : [':Filetypes'             , 'file types'],
-"       \ 'z' : [':FZF'                   , 'FZF'],
-"       \ }
-      " \ 's' : [':Snippets'     , 'snippets'],
-
 " s is for search
 let g:which_key_map.s = {
       \ 'name' : '+search' ,
@@ -215,17 +159,6 @@ let g:which_key_map.s = {
       \ 'y' : [':Filetypes'             , 'file types'],
       \ 'z' : [':FZF'                   , 'FZF'],
       \ }
-" 
-" :CocCommand fzf-preview.AllBuffers
-" :CocCommand fzf-preview.Changes
-" :CocCommand fzf-preview.Yankround
-" :CocCommand fzf-preview.CocReferences
-" :CocCommand fzf-preview.CocDiagnostics
-" :CocCommand fzf-preview.CocCurrentDiagnostics
-" :CocCommand fzf-preview.CocTypeDefinitions
-" \ 'l' : [':CocCommand fzf-preview.Bookmarks', 'list bookmarks'],
-" $FZF_PREVIEW_PREVIEW_BAT_THEME = 'ansi-dark'
-" 
 
 let g:which_key_map.S = {
       \ 'name' : '+Session' ,
@@ -267,22 +200,6 @@ let g:which_key_map.g = {
       \ }
       " \ 'A' : [':Git add %'                        , 'add current'],
       " \ 'S' : [':!git status'                      , 'status'],
-" 
-" 
-" 
-
-let g:which_key_map.G = {
-      \ 'name' : '+gist' ,
-      \ 'a' : [':Gist -a'                          , 'post gist anon'],
-      \ 'b' : [':Gist -b'                          , 'post gist browser'],
-      \ 'd' : [':Gist -d'                          , 'delete gist'],
-      \ 'e' : [':Gist -e'                          , 'edit gist'],
-      \ 'l' : [':Gist -l'                          , 'list public gists'],
-      \ 's' : [':Gist -ls'                         , 'list starred gists'],
-      \ 'm' : [':Gist -m'                          , 'post gist all buffers'],
-      \ 'p' : [':Gist -P'                          , 'post public gist '],
-      \ 'P' : [':Gist -p'                          , 'post private gist '],
-      \ }
 
 " l is for language server protocol
 let g:which_key_map.l = {
@@ -321,71 +238,5 @@ let g:which_key_map.l = {
       \ 'z' : [':CocDisable'                         , 'disable CoC'],
       \ 'Z' : [':CocEnable'                          , 'enable CoC'],
       \ }
-      " \ 'o' : ['<Plug>(coc-openlink)'                , 'open link'],
 
-" t is for terminal
-let g:which_key_map.t = {
-      \ 'name' : '+terminal' ,
-      \ ';' : [':FloatermNew --wintype=normal --height=6'        , 'terminal'],
-      \ 'f' : [':FloatermNew fzf'                               , 'fzf'],
-      \ 'g' : [':FloatermNew lazygit'                           , 'git'],
-      \ 'd' : [':FloatermNew lazydocker'                        , 'docker'],
-      \ 'n' : [':FloatermNew node'                              , 'node'],
-      \ 'N' : [':FloatermNew nnn'                               , 'nnn'],
-      \ 'p' : [':FloatermNew python'                            , 'python'],
-      \ 'm' : [':FloatermNew lazynpm'                           , 'npm'],
-      \ 'r' : [':FloatermNew ranger'                            , 'ranger'],
-      \ 't' : [':FloatermToggle'                                , 'toggle'],
-      \ 'y' : [':FloatermNew ytop'                              , 'ytop'],
-      \ 's' : [':FloatermNew ncdu'                              , 'ncdu'],
-      \ }
-
-" w is for wiki
-" let g:which_key_map.w = {
-"       \ 'name' : '+wiki' ,
-"       \ 'w' : ['<Plug>VimwikiIndex'                              , 'ncdu'],
-"       \ 'n' : ['<plug>(wiki-open)'                              , 'ncdu'],
-"       \ 'j' : ['<plug>(wiki-journal)'                              , 'ncdu'],
-"       \ 'R' : ['<plug>(wiki-reload)'                              , 'ncdu'],
-"       \ 'c' : ['<plug>(wiki-code-run)'                              , 'ncdu'],
-"       \ 'b' : ['<plug>(wiki-graph-find-backlinks)'                              , 'ncdu'],
-"       \ 'g' : ['<plug>(wiki-graph-in)'                              , 'ncdu'],
-"       \ 'G' : ['<plug>(wiki-graph-out)'                              , 'ncdu'],
-"       \ 'l' : ['<plug>(wiki-link-toggle)'                              , 'ncdu'],
-"       \ 'd' : ['<plug>(wiki-page-delete)'                              , 'ncdu'],
-"       \ 'r' : ['<plug>(wiki-page-rename)'                              , 'ncdu'],
-"       \ 't' : ['<plug>(wiki-page-toc)'                              , 'ncdu'],
-"       \ 'T' : ['<plug>(wiki-page-toc-local)'                              , 'ncdu'],
-"       \ 'e' : ['<plug>(wiki-export)'                              , 'ncdu'],
-"       \ 'u' : ['<plug>(wiki-list-uniq)'                              , 'ncdu'],
-"       \ 'U' : ['<plug>(wiki-list-uniq-local)'                              , 'ncdu'],
-"       \ }
-
-" Global
-" <Plug>VimwikiIndex
-" <Plug>VimwikiTabIndex
-" <Plug>VimwikiUISelect
-" <Plug>VimwikiDiaryIndex
-" <Plug>VimwikiMakeDiaryNote
-" <Plug>VimwikiTabMakeDiaryNote
-" <Plug>VimwikiMakeYesterdayDiaryNote
-" <Plug>VimwikiMakeTomorrowDiaryNote
-"
-" " Local
-" <Plug>Vimwiki2HTML
-" <Plug>Vimwiki2HTMLBrowse
-" <Plug>VimwikiDiaryGenerateLinks
-" <Plug>VimwikiFollowLink
-" <Plug>VimwikiSplitLink
-" <Plug>VimwikiVSplitLink
-" <Plug>VimwikiTabnewLink
-" <Plug>VimwikiGoBackLink
-" <Plug>VimwikiNextLink
-" <Plug>VimwikiPrevLink
-" <Plug>VimwikiGoto
-" <Plug>VimwikiDeleteLink
-" <Plug>VimwikiRenameLink
-" <Plug>VimwikiAddHeaderLevel
-
-" Register which key map
 call which_key#register('<Space>', "g:which_key_map")

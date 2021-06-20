@@ -5,7 +5,8 @@ syntax on
 " colorscheme gruvbox
 "colorscheme nord
 "colorscheme nvcode
-colorscheme onedark
+"colorscheme onedark
+colorscheme tokyonight
 "colorscheme aurora
 
 " checks if your terminal has 24-bit color support

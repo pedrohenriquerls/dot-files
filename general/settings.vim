@@ -22,7 +22,7 @@ set expandtab                           " Converts tabs to spaces
 set smartindent                         " Makes indenting smart
 set autoindent                          " Good auto indent
 set laststatus=2                        " Always display the status line
-set number                              " Line numbers
+set relativenumber                              " Line numbers
 set cursorline                          " Enable highlighting of the current line
 set background=dark                     " tell vim what the background color looks like
 set showtabline=2                       " Always show tabs
@@ -37,19 +37,6 @@ set clipboard=unnamedplus               " Copy paste between vim and everything 
 set incsearch
 set ignorecase
 set guifont=JetBrainsMono\ Nerd\ Font
-
-" New stuff
-" set notimeout nottimeout
-" set scrolloff=1
-" set sidescroll=1
-" set sidescrolloff=1
-" set display+=lastline
-" set backspace=eol,start,indent
-" set nostartofline
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-" set mmp=1300
-" set autochdir                           " Your working directory will always be the same as your working directory
-" set foldcolumn=2                        " Folding abilities
 
 " au! BufWritePost $MYVIMRC source %      " auto source when writing to init.vm alternatively you can run :source $MYVIMRC
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o

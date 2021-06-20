@@ -7,20 +7,9 @@ if empty(glob('~/.config/nvim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.config/nvim/autoload/plugged')
-
-" Change dates fast
-Plug 'tpope/vim-speeddating'
-" Convert binary, hex, etc..
-Plug 'glts/vim-radical'
-" Repeat stuff
-Plug 'tpope/vim-repeat'
-" Text Navigation
+" Sneak moves
 Plug 'unblevable/quick-scope'
-" Useful for React Commenting 
-Plug 'suy/vim-context-commentstring'
-" highlight all matches under cursor
-" Plug 'RRethy/vim-illuminate'
-
+Plug 'justinmk/vim-sneak'
 " Easymotion
 Plug 'easymotion/vim-easymotion'
 " Surround
@@ -39,8 +28,8 @@ Plug 'jiangmiao/auto-pairs'
 " Closetags
 Plug 'alvan/vim-closetag'
 " Themes
-Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'morhetz/gruvbox'
+Plug 'folke/tokyonight.nvim'
 " Intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Status Line
@@ -60,8 +49,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'junegunn/gv.vim'
 Plug 'rhysd/git-messenger.vim'
-" Terminal
-Plug 'voldikss/vim-floaterm'
 " Start Screen
 Plug 'mhinz/vim-startify'
 " Vista
@@ -76,7 +63,7 @@ Plug 'romgrk/barbar.nvim'
 " undo time travel
 Plug 'mbbill/undotree'
 " Find and replace
-Plug 'ChristianChiarulli/far.vim'
+Plug 'brooth/far.vim'
 " Auto change html tags
 Plug 'AndrewRadev/tagalong.vim'
 " live server
@@ -88,19 +75,10 @@ Plug 'skywind3000/asynctasks.vim'
 Plug 'skywind3000/asyncrun.vim'
 " Swap windows
 Plug 'wesQ3/vim-windowswap'
-" Easily Create Gists
-Plug 'mattn/vim-gist'
-Plug 'mattn/webapi-vim'
 " Colorizer
 Plug 'norcalli/nvim-colorizer.lua'
 " Intuitive buffer closing
 Plug 'moll/vim-bbye'
-" Debugging
-Plug 'puremourning/vimspector'
-Plug 'szw/vim-maximizer'
-" Neovim in Browser
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-Plug 'ghifarit53/tokyonight-vim'
 
 call plug#end()
 
