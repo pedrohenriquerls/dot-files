@@ -32,8 +32,11 @@ Plug 'morhetz/gruvbox'
 Plug 'folke/tokyonight.nvim'
 " Intellisense
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-lua/completion-nvim'
+Plug 'neovim/nvim-lspconfig'
+Plug 'glepnir/lspsaga.nvim'
 " Status Line
-Plug 'glepnir/galaxyline.nvim'
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kevinhwang91/rnvimr'
 " FZF
 Plug 'nvim-lua/popup.nvim'

@@ -15,6 +15,8 @@ source $HOME/.config/nvim/keys/mappings.vim
 source $HOME/.config/nvim/themes/nvcode.vim
   
 " Plugin Configuration
+luafile $HOME/.config/nvim/lua/galaxyline-config.lua
+luafile $HOME/.config/nvim/lua/lsp.lua
 source $HOME/.config/nvim/keys/which-key.vim
 source $HOME/.config/nvim/plug-config/better-whitespace.vim
 source $HOME/.config/nvim/plug-config/fzf.vim
