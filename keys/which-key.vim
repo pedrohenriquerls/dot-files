@@ -135,7 +135,7 @@ let g:which_key_map.s = {
       \ 'c' : [':Telescope git_commits'   , 'commits'],
       \ 'g' : [':Telescope git_files'     , 'git files'],
       \ 'p' : [':Telescope file_browser'  , 'project files'] ,
-      \ 'p' : [':Telescope marks'         , 'marks'] ,
+      \ 'm' : [':Telescope marks'         , 'marks'] ,
       \ 't' : [':Telescope live_grep'     , 'text Rg'],
       \ 'T' : [':Telescope help_tags'     , 'help tags'],
       \ 'z' : [':Telescope find_files'    , 'FZF'],
