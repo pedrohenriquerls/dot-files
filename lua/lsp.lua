@@ -1,4 +1,6 @@
 local nvim_lsp = require('lspconfig')
+local saga = require('lspsaga')
+local saga_diagnostic = require( 'lspsaga.diagnostic' )
 
 local on_attach = function(client, bufnr)
     require('completion').on_attach()
@@ -8,23 +10,25 @@ local on_attach = function(client, bufnr)
 
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
       vim.lsp.diagnostic.on_publish_diagnostics, {
-        virtual_text = {
-          prefix = "",
-          spacing = 2,
-        },
+        --virtual_text = {
+        --  prefix = "",
+        --  spacing = 2,
+        --},
+        --signs = true,
+        virtual_text = false,
         signs = true,
         update_in_insert = false,
       }
-    )   --buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+    )
+    -- buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
     vim.fn.sign_define('LspDiagnosticsSignError', { text = "", texthl = "LspDiagnosticsDefaultError" })
     vim.fn.sign_define('LspDiagnosticsSignWarning', { text = "", texthl = "LspDiagnosticsDefaultWarning" })
     vim.fn.sign_define('LspDiagnosticsSignInformation', { text = "", texthl = "LspDiagnosticsDefaultInformation" })
     vim.fn.sign_define('LspDiagnosticsSignHint', { text = "", texthl = "LspDiagnosticsDefaultHint" })
     -- Mappings
-    local opts = { noremap=true, silent=false }
+    local opts = { noremap=true, silent=true }
     buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    buf_set_keymap('n', 'gh', '<Cmd>lua require( "lspsaga.diagnostic" ).show_line_diagnostics()<CR>', opts)
     -- buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
     -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     -- buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
@@ -52,6 +56,7 @@ end
 
 local custom_on_init = function(client)
   print('Language Server Protocol started!')
+  saga.init_lsp_saga()
 end
 
 -- local servers = {'gopls', 'rust_analyzer', 'solargraph'}
@@ -62,3 +67,31 @@ for _, lsp in ipairs(servers) do
         on_init = custom_on_init
     }
 end
+
+-- EFM-langserver config
+local eslint = {
+    lintCommand = "./node_modules/.bin/eslint -f unix --stdin --stdin-filename ${INPUT}",
+    lintIgnoreExitCode = true,
+    lintStdin = true,
+    lintFormats = {"%f:%l:%c: %m"},
+    formatCommand = "./node_modules/.bin/eslint --fix-to-stdout --stdin --stdin-filename=${INPUT}",
+    formatStdin = true
+}
+
+nvim_lsp.efm.setup{
+  cmd = {"efm-langserver"},
+  on_attach = function(client, bufnr)
+    client.resolved_capabilities.rename = false
+    client.resolved_capabilities.hover = false
+    client.resolved_capabilities.documentSymbol= false
+    on_attach(client, bufnr)
+  end,
+  on_init = custom_on_init,
+  settings = {
+    rootMarkers = {vim.loop.cwd()},
+    languages = {
+      javascript = { eslint },
+      -- other languages here
+    }
+  }
+}

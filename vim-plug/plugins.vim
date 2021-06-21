@@ -35,6 +35,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/completion-nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
+Plug 'tsuyoshicho/vim-efm-langserver-settings'
 " Status Line
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'kevinhwang91/rnvimr'

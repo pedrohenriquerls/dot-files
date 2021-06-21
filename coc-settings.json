@@ -8,11 +8,18 @@
   "explorer.file.showHiddenFiles": true,
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
-    "v": "open:vsplit"
+    "v": "open:vsplit",
+    "dd": "delete"
   },
 
   "bookmark.sign": "",
 
   //coc-emoji
-  "coc.source.emoji.filetypes": ["markdown"]
+  "coc.source.emoji.filetypes": ["markdown"],
+  "explorer.root.customRules": {
+    "vcs": {
+      "patterns": [".git"]
+    }
+  },
+  "explorer.root.strategies": ["custom:vcs"]
 }
