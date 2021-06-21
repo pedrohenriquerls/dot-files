@@ -20,12 +20,12 @@ local on_attach = function(client, bufnr)
         update_in_insert = false,
       }
     )
-    -- buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
     vim.fn.sign_define('LspDiagnosticsSignError', { text = "", texthl = "LspDiagnosticsDefaultError" })
     vim.fn.sign_define('LspDiagnosticsSignWarning', { text = "", texthl = "LspDiagnosticsDefaultWarning" })
     vim.fn.sign_define('LspDiagnosticsSignInformation', { text = "", texthl = "LspDiagnosticsDefaultInformation" })
     vim.fn.sign_define('LspDiagnosticsSignHint', { text = "", texthl = "LspDiagnosticsDefaultHint" })
     -- Mappings
+    -- buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
     local opts = { noremap=true, silent=true }
     buf_set_keymap('n', 'gD', '<Cmd>lua vim.lsp.buf.declaration()<CR>', opts)
     buf_set_keymap('n', 'gd', '<Cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -78,15 +78,11 @@ local eslint = {
     formatStdin = true
 }
 
-nvim_lsp.efm.setup{
+nvim_lsp["efm"].setup{
   cmd = {"efm-langserver"},
-  on_attach = function(client, bufnr)
-    client.resolved_capabilities.rename = false
-    client.resolved_capabilities.hover = false
-    client.resolved_capabilities.documentSymbol= false
-    on_attach(client, bufnr)
-  end,
+  on_attach = on_attach,
   on_init = custom_on_init,
+  init_options = { documentSymbol = false, hover = false, rename = false },
   settings = {
     rootMarkers = {vim.loop.cwd()},
     languages = {
