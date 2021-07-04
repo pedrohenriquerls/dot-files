@@ -39,7 +39,6 @@ Plug 'glepnir/lspsaga.nvim'
 Plug 'tsuyoshicho/vim-efm-langserver-settings'
 " Status Line
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-Plug 'kevinhwang91/rnvimr'
 " FZF
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
