@@ -28,6 +28,7 @@ Plug 'jiangmiao/auto-pairs'
 " Closetags
 Plug 'alvan/vim-closetag'
 " Themes
+Plug 'marko-cerovac/material.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'folke/tokyonight.nvim'
 " Intellisense

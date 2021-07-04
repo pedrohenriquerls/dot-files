@@ -62,7 +62,6 @@ let g:which_key_map.a = {
       \ 'n' : [':set nonumber!'          , 'line-numbers'],
       \ 's' : [':s/\%V\(.*\)\%V/"\1"/'   , 'surround'],
       \ 'r' : [':set norelativenumber!'  , 'relative line nums'],
-      \ 't' : [':FloatermToggle'         , 'terminal'],
       \ 'w' : [':StripWhitespace'        , 'strip whitespace'],
       \ }
 
@@ -86,10 +85,9 @@ let g:which_key_map.b = {
       \ 'D' : [':BufferOrderByDirectory', 'order by directory'],
       \ 'f' : ['bfirst'                 , 'first-buffer'],
       \ 'l' : ['blast'                  , 'last buffer'],
-      \ 'L' : [':BufferOrderByLanguage' , 'order by language'],
       \ 'n' : ['bnext'                  , 'next-buffer'],
       \ 'p' : ['bprevious'              , 'previous-buffer'],
-      \ '?' : ['Buffers'                , 'fzf-buffer'],
+      \ '?' : [':Telescope buffers'                , 'fzf-buffer'],
       \ }
 
 " f is for find and replace
@@ -133,12 +131,12 @@ let g:which_key_map.m = {
 let g:which_key_map.s = {
       \ 'b' : [':Telescope buffers'       , 'current buffer'],
       \ 'c' : [':Telescope git_commits'   , 'commits'],
-      \ 'g' : [':Telescope git_files'     , 'git files'],
+      \ 'f' : [':Telescope find_files'    , 'find files'],
       \ 'p' : [':Telescope file_browser'  , 'project files'] ,
       \ 'm' : [':Telescope marks'         , 'marks'] ,
       \ 't' : [':Telescope live_grep'     , 'text Rg'],
       \ 'T' : [':Telescope help_tags'     , 'help tags'],
-      \ 'z' : [':Telescope find_files'    , 'FZF'],
+      \ 'z' : [':Telescope git_files'     , 'FZF under git'],
       \ }
 
 let g:which_key_map.S = {
@@ -187,7 +185,7 @@ let g:which_key_map.l = {
       \ 'name' : '+lsp' ,
       \ 'a' : [':Lspsaga code_action'           , 'code action'],
       \ 'A' : [':Lspsaga range_code_action'     , 'selected action'],
-      \ 'd' : [':Lspsaga lsp_finder'            , 'definition'],
+      \ 'd' : [':Telescope lsp_definitions'     , 'definition'],
       \ 'D' : [':Lspsaga preview_definition'    , 'definition preview'],
       \ 'n' : [':Lspsaga diagnostic_jump_next'  , 'next diagnostic'],
       \ 'o' : [':Vista!!'                       , 'outline'],

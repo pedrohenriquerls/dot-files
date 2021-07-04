@@ -6,9 +6,10 @@ syntax on
 "colorscheme nord
 "colorscheme nvcode
 "colorscheme onedark
-colorscheme tokyonight
+"colorscheme tokyonight
 "colorscheme aurora
 
+source $HOME/.config/nvim/themes/material.vim
 " checks if your terminal has 24-bit color support
 if (has("termguicolors"))
   set termguicolors

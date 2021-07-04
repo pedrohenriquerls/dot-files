@@ -5,6 +5,17 @@ let bufferline.shadow = v:true
 
 " Enable/disable icons
 let bufferline.icons = v:true
+"	let bufferline.animation = v:true
+let bufferline.auto_hide = v:true
+let bufferline.tabpages = v:true
+let bufferline.closable = v:true
+let bufferline.clickable = v:true
+let bufferline.icons = v:true
+let bufferline.icon_custom_colors = v:false
+let bufferline.icon_separator_active = '▎'
+let bufferline.icon_separator_inactive = '▎'
+let bufferline.icon_close_tab = ''
+let bufferline.icon_close_tab_modified = '●'
 
 " Enables/disable clickable tabs
 "  - left-click: go to buffer
