@@ -1,2 +1,6 @@
-This repository is a copy from this https://github.com/ChristianChiarulli/nvim one with a few changes.
-Why I didn't fork it? Because I forgot I could do it
+This repository was based at first on this another repo https://github.com/ChristianChiarulli/nvim, but everything changed a lot but the project organization remains.
+- Neovim LSP (LSP Saga, Telescope)
+- Which key
+- COCExplore
+- Telescope + FZF
+- The configuration still with the old and good VIM script
