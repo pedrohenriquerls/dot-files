@@ -191,7 +191,8 @@ let g:which_key_map.l = {
       \ 'o' : [':Vista!!'                       , 'outline'],
       \ 'p' : [':Lspsaga diagnostic_jump_prev'  , 'prev diagnostic'],
       \ 'r' : [':Lspsaga rename'                , 'rename'],
-      \ 's' : [':Lspsaga show_line_diagnostics' , 'diagnostic'],
+      \ 's' : [':Telescope lsp_document_symbols', 'buffer symbols'],
+      \ 'S' : [':Lspsaga show_line_diagnostics' , 'diagnostic'],
       \ }
 
 call which_key#register('<Space>', "g:which_key_map")
