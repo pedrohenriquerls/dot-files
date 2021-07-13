@@ -1,6 +1,7 @@
 local nvim_lsp = require('lspconfig')
 local saga = require('lspsaga')
 local saga_diagnostic = require( 'lspsaga.diagnostic' )
+require("flutter-tools").setup{}
 
 local on_attach = function(client, bufnr)
     require('completion').on_attach()

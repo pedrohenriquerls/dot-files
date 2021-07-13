@@ -37,6 +37,7 @@ Plug 'nvim-lua/completion-nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'glepnir/lspsaga.nvim'
 Plug 'tsuyoshicho/vim-efm-langserver-settings'
+Plug 'akinsho/flutter-tools.nvim'
 " Status Line
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 " FZF
